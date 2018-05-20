@@ -1,4 +1,4 @@
-# [eternal] (https://github.com/kritr/eternal)
+# [eternal](https://github.com/kritr/eternal)
 
 [![Build Status](https://travis-ci.org/KritR/eternal.svg?branch=master)](https://travis-ci.org/KritR/eternal)
 [![Coverage Status](https://coveralls.io/repos/github/KritR/eternal/badge.svg?branch=master)](https://coveralls.io/github/KritR/eternal?branch=master)
