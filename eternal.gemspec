@@ -7,17 +7,16 @@ Gem::Specification.new do |s|
   s.authors     = ["Krithik Rao"]
   s.email       = 'krdevmail@gmail.com'
   s.files       = ["lib/eternal.rb"]
-  s.homepage    =
-  'http://rubygems.org/gems/eternal'
+  s.homepage    = 'http://rubygems.org/gems/eternal'
   s.license     = 'MIT'
 
-  gem.add_dependency "chronic_duration", "~> 0.10.8" 
-  gem.add_dependency "numerizer", "~> 0.3.0" 
-  gem.add_dependency "chronic", "~> 0.10.2" 
-	gem.add_dependency "ice_cube", "~> 0.16.2"
-	gem.add_dependency "textoken", "~> 1.1.2"
+  s.add_dependency "chronic_duration", "~> 0.10.8" 
+  s.add_dependency "numerizer", "~> 0.2.0" 
+  s.add_dependency "chronic", "~> 0.10.2" 
+  s.add_dependency "ice_cube", "~> 0.16.2"
+  s.add_dependency "textoken", "~> 1.1.2"
 
-  gem.add_development_dependency "rake", "~> 12.3.1"
-  gem.add_development_dependency "rspec", "~> 3.7"
-  gem.add_development_dependency "coveralls"
+  s.add_development_dependency "rake", "~> 12.3.1"
+  s.add_development_dependency "rspec", "~> 3.7"
+  s.add_development_dependency "coveralls"
 end
