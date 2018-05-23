@@ -2,12 +2,15 @@ Gem::Specification.new do |s|
   s.name        = 'eternal'
   s.version     = '0.0.1'
   s.date        = '2018-04-04'
-  s.summary     = "Hola!"
-  s.description = "A parser for event timings and occurrences"
+  s.summary     = %{Eternal parses events, dates, and everything involved in 
+  schedules using chronic and chronic duration. These events are returned as 
+  ice_cube objects which can be converted to ical or yaml, or simply used to
+  calculate the next occurrence of the schedule specified.}
+  s.description = "A parser for event timings and schedules"
   s.authors     = ["Krithik Rao"]
   s.email       = 'krdevmail@gmail.com'
-  s.files       = ["lib/eternal.rb"]
-  s.homepage    = 'http://rubygems.org/gems/eternal'
+  s.files       = `git ls-files`.split($/)
+  s.homepage    = 'https://github.com/KritR/eternal'
   s.license     = 'MIT'
 
   s.add_dependency "chronic_duration", "~> 0.10.8" 
