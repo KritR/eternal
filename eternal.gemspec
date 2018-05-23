@@ -13,14 +13,14 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/KritR/eternal'
   s.license     = 'MIT'
 
-  s.add_dependency "chronic_duration", "~> 0.10.8" 
-  s.add_dependency "numerizer", "~> 0.2.0" 
-  s.add_dependency "chronic", "~> 0.10.2" 
-  s.add_dependency "ice_cube", "~> 0.16.2"
-  s.add_dependency "textoken", "~> 1.1.2"
+  s.add_dependency "chronic_duration", "~>0.10", ">= 0.10.8" 
+  s.add_dependency "numerizer", "~>0.2", ">= 0.2.0" 
+  s.add_dependency "chronic", "~>0.10", ">= 0.10.2" 
+  s.add_dependency "ice_cube", "~>0.16", ">= 0.16.2"
+  #s.add_dependency "textoken", "~> 1.1.2"
 
-  s.add_development_dependency "rake", "~> 12.3.1"
-  s.add_development_dependency "simplecov"
-  s.add_development_dependency "coveralls"
-  s.add_development_dependency "minitest"
+  s.add_development_dependency "rake", "~>12.3", ">= 12.3.1"
+  s.add_development_dependency "simplecov", "~>0.14", ">= 0.14.1"
+  s.add_development_dependency "coveralls", "~>0.8", ">= 0.8.21"
+  s.add_development_dependency "minitest", "~>5.11", ">= 5.11.3"
 end
