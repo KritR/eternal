@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   s.add_dependency "textoken", "~> 1.1.2"
 
   s.add_development_dependency "rake", "~> 12.3.1"
-  s.add_development_dependency "rspec", "~> 3.7"
   s.add_development_dependency "coveralls"
+  s.add_development_dependency "minitest"
 end

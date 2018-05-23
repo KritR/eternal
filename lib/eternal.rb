@@ -5,7 +5,7 @@ require 'patterns'
 require 'time'
 
 class Eternal
-  def parse(str)
+  def self.parse(str)
     str = str.dup
     cleanup!(str)
     tokens = tokenize(str)
@@ -16,7 +16,7 @@ class Eternal
     rrule.evaluate
   end
 
-  def cleanup!(str)
+  def self.cleanup!(str)
     str.gsub!(/\b(?:(last|spann?)(?:ing|s)?(?: for)?|for)(?: a| the)?(?: period| time| duration| span)?(?: of)?\b/i, 'duration')
     str.gsub!(/\b(start|end)(s|ing)?(\sin|\son)?\b/i, '\1')
     str.gsub!(/\b(end)(\sat)\b/i, 'endtime')
@@ -49,17 +49,17 @@ class Eternal
     end
   end
 
-  def tokenize(str)
+  def self.tokenize(str)
     str.gsub!(/\s+/m, ' ')
     str.strip!
     str.split(" ")
   end
 
-  def delete_unknown!(tokens)
-    tokens.select! {|token| (token =~ /REGEX_ALL/i) != nil}
+  def self.delete_unknown!(tokens)
+    tokens.select! {|token| (token =~ REGEX_ALL) != nil}
   end
 
-  def recognize_keywords!(tokens)
+  def self.recognize_keywords!(tokens)
     tokens.map! do |token| 
       token = token.to_sym if (token =~ KEYWORDS_REGEX) != nil
       token
@@ -67,7 +67,7 @@ class Eternal
   end
 
 
-  def nest_keywords(tokens)
+  def self.nest_keywords(tokens)
     nested = [[]]
     tokens.each do |token|
       if (token.is_a? Symbol) 
@@ -78,9 +78,6 @@ class Eternal
     nested
   end
   
-  def simplify_expressions(tokens)
-  end
-
 end
 
 class Evaluator
