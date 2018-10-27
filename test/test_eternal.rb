@@ -12,11 +12,11 @@ describe 'Eternal Parsing' do
       'every friday' => IceCube::Rule.weekly.day(:friday),
       'every saturday' => IceCube::Rule.weekly.day(:saturday)
     }
-    strings.each do |key,value|
+    strings.each do |phrase, rule|
       schedule = IceCube::Schedule.new() do |s|
-        s.add_recurrence_rule(value)
+        s.add_recurrence_rule(rule)
       end
-      eternal_output = Eternal.parse(key) 
+      eternal_output = Eternal.parse(phrase) 
       value(eternal_output).must_equal schedule
     end
   end

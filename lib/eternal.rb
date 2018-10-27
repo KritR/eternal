@@ -61,7 +61,7 @@ class Eternal
 
   def self.recognize_keywords!(tokens)
     tokens.map! do |token| 
-      token = token.to_sym if (token =~ KEYWORDS_REGEX) != nil
+      token = token.to_sym if (token =~ /\b#{KEYWORDS_REGEX}\b/) != nil
       token
     end
   end
