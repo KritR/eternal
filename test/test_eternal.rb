@@ -1,12 +1,23 @@
 require 'test_helper'
 require 'ice_cube'
 
-describe 'Eternal' do
+describe 'Eternal Parsing' do
   it 'can parse repeats occuring weekly' do
-    schedule = IceCube::Schedule.new() do |s|
-      s.add_recurrence_rule(IceCube::Rule.weekly.day(:sunday))
+    strings = {
+      'every sunday' => IceCube::Rule.weekly.day(:sunday),
+      'every monday' => IceCube::Rule.weekly.day(:monday),
+      'every tuesday' => IceCube::Rule.weekly.day(:tuesday),
+      'every wednesday' => IceCube::Rule.weekly.day(:wednesday),
+      'every thursday' => IceCube::Rule.weekly.day(:thursday),
+      'every friday' => IceCube::Rule.weekly.day(:friday),
+      'every saturday' => IceCube::Rule.weekly.day(:saturday)
+    }
+    strings.each do |key,value|
+      schedule = IceCube::Schedule.new() do |s|
+        s.add_recurrence_rule(value)
+      end
+      eternal_output = Eternal.parse(key) 
+      value(eternal_output).must_equal schedule
     end
-    eternal_output = Eternal.parse('every sunday') 
-    value(eternal_output).must_equal schedule
   end
 end
